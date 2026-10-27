@@ -1,0 +1,1401 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@font-face {
+    font-family: 'AU Passata';
+    src: url('fonts/AUPassata_Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AU Passata';
+    src: url('fonts/AUPassata_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #D2D3D5;
+}
+
+header {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    background-color: #090c9b;
+    color: #fbfff1;
+    padding: 25px;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 850;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-optical-sizing: auto;
+    color: #fbfff1;
+}
+
+h2 {
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 850;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-style: normal;
+    font-optical-sizing: auto;
+    color: #3c3744;
+    padding-bottom: 12px;
+    margin: auto;
+    max-width: 700px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+/* navigation */
+nav {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    background-color: #b4c5e4;
+    padding: 13px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li:not(:last-child)::after { 
+    content: "/";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #090c9b; 
+    font-size: 18px;
+    display: inline-block;
+    transition: transform 0.15s ease;
+
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    transform: scale(1.06);
+}
+
+main {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0px;
+    margin: 0 auto 0 auto;
+    border-bottom: 2px;
+    text-align: center;
+}
+
+/* About */
+#about2 {
+    margin: 0 auto;
+    overflow: hidden; /* clears floats */
+}
+
+.intro-content2 {
+    justify-content: center;
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Figure row: two items centered, wrapping when needed */
+.intro-figure {
+    display: flex;
+    flex-direction: column;   /* <-- vertical stack */
+    align-items: center;      /* center each plot */
+    justify-content: flex-start;
+    flex-wrap: nowrap;        /* no side-by-side */
+    width: 100%;
+    max-width: 1000px;        /* overall container width */
+    margin: 16px auto;
+    gap: 15px;                /* space between plots */
+    box-sizing: border-box;
+}
+
+/* Each figure container */
+.intro-figure-container,
+.first-plot,
+.second-plot {
+    width: 100%;
+    max-width: 700px;         /* tune this if you want larger/smaller images */
+    min-width: 0;             /* remove previous min-width constraints */
+    box-sizing: border-box;
+}
+
+/* Make images behave responsively inside their containers */
+.plot-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.plot-caption {
+    font-family: "Nunito", sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.25;
+    color: #444;
+    margin-top: 6px;
+    text-align: center;
+}
+
+#about1 {
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.intro-content {
+    justify-content: center;
+    max-width: 750px;
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Small-screen polish: allow each plot to take full width when the viewport is tight */
+@media (max-width: 640px) {
+    .first-plot,
+    .second-plot {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+img {
+    max-width: 100%;
+    height:auto; /* Ensures images scale properly */
+}
+
+
+.white-bg {
+    background-color: #fbfff1;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 0px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Outcome variables */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    height: 320px;
+}
+
+input[type="range"][orient="vertical"] {
+    writing-mode: vertical-lr;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 300px;
+    width: 8px;
+    background: #b4c5e4;
+    outline: #090c9b; 
+    border-radius: 4px;
+    margin-left: 70px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #090c9b; /* Change color */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-labels {
+    display: flex;
+    color: #3c3744;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.radio-container input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #b4c5e4;
+    margin: 7px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+/* Selected (Checked) Radio Button */
+.radio-container input[type="radio"]:checked {
+    background: #090c9b; 
+}
+
+.radio-container {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 17px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.radio-container label {
+    display: flex;
+    color: #3c3744;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Collaborators list */
+.collab {
+    background: #fbfff1;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 0px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+    display: block;
+    font-size: 17px;
+}
+
+.collab table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.collab td {
+    width: 33%; /* Three equal columns */
+    padding: 10px; /* Add some space between names */
+    vertical-align: top;
+}
+
+.collab h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.names {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #3c3744; /* Darker color for names */
+}
+
+.names:hover {
+    font-size: 17px;
+ }
+
+.affiliation {
+    font-size: 14px; /* Smaller font size for affiliation */
+    color: #555; /* Optional: lighter text color for the affiliation */
+}
+
+.blue-bg {
+    background-color: #b4c5e4;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 0px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Funding */
+
+.funding-container {
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 50px;             
+    flex-wrap: wrap;       
+}
+
+.funding h2 {
+   padding-top: 20px;
+   padding-bottom: 0px; 
+}
+
+.funding-item {
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.funding-item:hover {
+    transform: scale(1.03);
+}
+
+.funding-item img {
+    max-width: 450px;  
+    height: auto;
+}
+
+.funding-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.funding-item p {
+    font-family: 'AU Passata', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.bold-word {
+    font-weight: 700;
+}
+
+/* Research paper */
+.paper-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paper-text p {
+    font-size: 18px;
+    color: #3c3744;
+    padding-bottom: 16px;
+    max-width: 750px;
+    text-align: justify;
+    margin: 0 auto; /* keep centered without inline-block */
+}
+
+.paper-metrics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;   /* responsive */
+}
+
+.paper-metrics > * {
+    transform: scale(1.3);
+    transform-origin: center;
+}
+
+/* MegaInequality in the Media */
+.media-content {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.media-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.media-slider {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    min-height: 360px;
+    overflow: hidden;
+    transition: transform 0.15s ease;
+    margin: 10px;
+}
+
+.media-slider .media-card {
+    position: absolute;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    transform: translateX(0);
+    pointer-events: none;
+
+    text-decoration: none;
+    color: inherit;
+    background-color: #fbfff1;
+    border-radius: 8px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.media-slider .media-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.media-slider .media-card.exiting {
+    opacity: 0;
+    transform: translateX(var(--exit-x));
+    z-index: 1;
+}
+
+.media-slider .media-card.entering {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 3;
+}
+
+.media-slider:hover {
+    transform: scale(1.015);
+}
+
+.media-card h3 {
+    margin: 10px;
+    font-size: 24px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #090c9b;
+}
+
+.media-card p {
+    font-size: 18px;
+    padding: 8px 10px;
+}
+
+.media-date {
+    color: #8C8C8C;
+}
+
+.media-thumbnail {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.media-arrow {
+    border: none;
+    background: transparent;
+    font-size: 38px;
+    cursor: pointer;
+    color: #090c9b;
+    transition: transform 0.15s ease;
+}
+
+.media-arrow:hover {
+    transform: scale(1.1);
+}
+
+.media-dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.media-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #8C8C8C;
+    cursor: pointer;
+    opacity: 0.45;
+}
+
+.media-dot.active {
+    opacity: 1;
+    background-color: #090c9b;
+}
+
+.media-slider .media-card {
+    position: absolute;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+
+    text-decoration: none;
+    color: inherit;
+    background-color: #fbfff1;
+    border-radius: 8px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.media-slider .media-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.media-slider .media-card.slide-left {
+    transform: translateX(-100%);
+}
+
+.media-slider .media-card.slide-right {
+    transform: translateX(100%);
+}
+
+@keyframes mediaFade {
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Outcomes of interest */
+.outcomes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the columns horizontally */
+    gap: 20px; /* Space between columns */
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+/* Styling for each column */
+.outcome-column {
+    flex: 1; /* Make columns equal width */
+    max-width: 350px; /* Optional: Limit the maximum width */
+    text-align: center; /* Center text within the column */
+    padding: 10px;
+    background-color: #fbfff1; /* Light gray background for columns */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.outcome-column h3 {
+    margin: 10px;
+    font-size: 22px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: #090c9b; /* Darker color for headings */
+}
+
+/* Styling for the paragraph text */
+.outcome-column p {
+    font-size: 1em;
+    padding: 10px;  
+    color: #3c3744; /* Slightly lighter color for the text */
+}
+
+
+/* Findings */
+.findings_navbar {
+    background-color: #fbfff1;
+    padding: 0px;
+}
+
+.findings_navbar ul li a {
+    text-decoration: none; /* Remove default underline */
+    color: #090c9b; 
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.findings_navbar ul li a.active {
+    font-weight: 800; /* Bold for active tab */
+}
+
+.tab-content {
+    display: none;
+    padding: 15px;
+    background-color: #fbfff1;
+}
+
+.tab-content#PollResults {
+    display: block;
+}
+
+.public_statement-text p {
+    font-size: 18px;
+    color: #3c3744;
+    padding-bottom: 16px;
+    max-width: 750px;
+    text-align: justify;
+    margin: 0 auto; /* keep centered without inline-block */
+}
+
+#data-section table {
+    width: 100%; 
+    color: #3c3744;            /* fill container */
+    max-width: 1070px;
+    margin: 0 auto;          /* center */
+    border-collapse: collapse;
+    font-size: 18px;
+    line-height: 1.6;        /* slightly tighter lines */
+}
+
+#data-section table td, #data-section table th {
+    padding: 8px 12px; /* Adds padding inside each cell */
+}
+
+#data-section table td:nth-child(2), #data-section table th:nth-child(2) {
+    text-align: left; /* Aligns the text in the second column to the left */
+}
+
+/* Treatment CSS section */
+body.treatment-body {
+    background-color: #fbfff1;
+}
+
+.treatment-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.treatment-content {
+    margin: 0 auto;
+    text-align: justify;
+    width: 100%;
+    padding: 10px 0; /* Padding for top and bottom */
+}
+
+.treatment-list {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #3c3744; /* Darker color for names */
+}
+
+.treatment-list:hover {
+    font-size: 17px;
+ }
+
+.treatment-graphic {
+    display: flex;
+    justify-content: center; /* Center the graphics horizontally */
+    gap: 20px; /* Space between graphics */
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+.list-wrapper {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-style: normal;
+    font-optical-sizing: auto;
+    background-color: auto;
+    color: #3c3744;
+    padding-bottom: 12px;
+    margin: auto;
+    max-width: 700px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.visual-treatment-super-wrapper {
+    margin-left: 160px;
+    justify-content: center;
+    width: 100%;  
+}
+
+.visual-treatment-wrapper {
+    width: fit-content;
+}
+
+/* open-ended answer text box */
+.open-answer-container {
+    margin: 15px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.open-answer-container textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    background-color: white;
+    color: #3c3744;
+}
+
+.open-answer-container textarea:focus {
+    outline: none;
+    border-color: #090c9b;
+    box-shadow: 0 0 5px rgba(9, 12, 155, 0.3);
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.button {
+    background-color: #090c9b;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-style: normal;
+    color: #fbfef2;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Text reveal area */
+.reveal-wrapper {
+    position: relative;
+    max-width: 700px;
+    margin: 30px auto;
+    min-height: 120px; /* or whatever height your content usually takes */
+}
+
+.reveal-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    background-color: #f0f0f0;
+    padding: 0 15px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.reveal-text.active {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 15px;
+    z-index: 2;
+}
+
+
+/* Forest plot of treatments */
+.forest-tab {
+    position: relative;
+    width: 100%;
+    max-width: 1300px !important; 
+    margin: 0 auto;
+}
+
+.forest_navbar {
+    background-color: #fbfff1;
+    padding: 5px;
+    padding-bottom: 20px;
+    padding-top: 25px;
+}
+
+.forest_navbar ul li a {
+    text-decoration: none; /* Remove default underline */
+    color: #090c9b; 
+    font-size: 18px;
+    font-weight: 400;
+    
+}
+
+.forest_navbar ul li a.active {
+    font-weight: bold; /* Bold for active tab */
+}
+
+.forest-plot-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100% !important;
+    max-width: 1330px !important; 
+    margin: 0 auto !important;
+}
+
+.label-column {
+    max-width: 560px;
+    padding-right: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.plot-content {
+    max-width: 770px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 34px; 
+    justify-content: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: white;
+}
+
+.treatment-label {
+    text-decoration: none;
+    color: #3c3744;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;              
+    text-align: right;  
+    white-space: nowrap; 
+}
+
+.treatment-label:hover {
+    font-weight: bold;
+ }
+
+.effect-bar {
+    position: relative;
+    height: 0; /* no bar background */
+    width: 100%;
+}
+
+.bar-stats {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  line-height: 1;
+  color: black;
+  white-space: nowrap;
+}
+
+[id^="plot-container-"] { overflow: visible; }
+
+.effect-marker {
+    position: absolute;
+    top: -4.5px; /* vertically centers the circle */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 3;
+    transform: translateX(-50%);
+}
+
+.ci-line {
+    position: absolute;
+    top: -1px; /* slightly thinner line position */
+    height: 1.5px; /* thinner line */
+    background-color: black; /* changed to black */
+    z-index: 2;
+}
+
+.ci-line::before,
+.ci-line::after {
+    content: '';
+    position: absolute;
+    width: 1.3px; /* thinner stops */
+    height: 10px;
+    background-color: black;
+    top: -4px;
+}
+
+.ci-line::before {
+    left: 0;
+}
+
+.ci-line::after {
+    right: 0;
+}
+
+.row-guide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;       
+  height: 0.8px;   
+  background-color: #45404d;
+  opacity: 0.1;
+  z-index: 1;             
+  pointer-events: none;
+}
+
+.x-grid-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0.7px;
+    background-color: #45404d;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.zero-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #090c9b;
+    opacity: 0.6;
+    z-index: 3;
+}
+
+.zero-line-label {
+  position: absolute;
+  top: 75px; /* distance from top of plot area */
+  left: -25px; /* small horizontal offset from the line */
+  transform: rotate(-90deg); /* vertical text */
+  transform-origin: top left;
+  font-size: 12px;
+  color:#090c9b;
+  font-weight: 500;
+  padding: 2px 4px;
+  white-space: nowrap; 
+}
+
+.x-axis {
+    position: relative;
+    width: 670px;
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #3c3744;
+}
+
+.tick-label {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 15px;
+    white-space: nowrap;
+    color: #3c3744;
+}
+
+.axis-title {
+    text-align: center;
+    margin-top: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3c3744;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #090c9b; /* Change color as needed */
+    color: #fbfef2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it is on top */
+}
+
+.back-to-top:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+footer {
+    font-family: 'Nunito', sans-serif;
+    background-color: #fbfef2;
+    color: #8C8C8C;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-text,
+.footer-text:visited {
+    color: #8C8C8C;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px; 
+    transition: transform 0.15s ease;
+}
+
+.footer-text:hover,
+.footer-text:active {
+    color: #8C8C8C;
+    text-decoration: none;
+    font-size: 16px;
+    transform: scale(1.06);
+}
+
+
+/* responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .left-content, .right-figure, .intro-content, .left-picture {
+        width: 100%; /* Stack elements on top of each other on smaller screens */
+        margin-top: 20px; /* Adds space between elements when stacked */
+    }
+
+    header {
+        font-size: 27px;
+        padding: 15px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    h3 {
+        font-size: 18px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    p, #data-section table, .list-wrapper {
+        font-size: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .button {
+        font-size: 15px;
+    }
+
+    .first-plot {
+        transform: scale(1);
+        transform-origin: top center; 
+        align-items: center;
+    }   
+
+    .second-plot {
+        transform: scale(1);
+        transform-origin: top center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .outcomes-container {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 20px; /* Center each outcome block */
+    }
+
+    .outcome-column {
+        max-width: 100%; /* Optional: cap size on mobile so they don't become too wide */
+        width: 100%; /* Full width inside container */
+    }
+
+    .outcome-column h3 {
+        font-size: 16.5px; /* Match h3 mobile size */
+    }
+
+    .outcome-column p {
+        font-size: 15px; /* Match body text mobile size */
+    }
+
+    .slider-labels span {
+        font-size: 13px; /* Shrink slider label text a bit too */
+    }
+
+    .slider-labels {
+        height: 220px; /* Shrink the height of the slider labels */
+    }
+
+    .radio-container label {
+        font-size: 15px; /* Make radio labels align with smaller paragraph text */
+    }
+
+    input[type="range"][orient="vertical"] {
+        height: 220px; /* Shrink the actual slider itself */
+    }
+
+    .radio-container {
+        margin-left: 20px; 
+        margin-right: 20px; 
+        padding-bottom: 25px;
+        gap: 7px; /* Space between radio buttons */
+    }
+
+    .findings_navbar ul li a {
+        font-size: 16px;
+    }
+
+    .visualizedresults {
+        flex-direction: column; /* stack vertically */
+        align-items: center; /* center everything */
+        text-align: center; /* override text to center */
+        gap: 0px;
+    }
+
+    .plot-text, .plot-column-vr {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .plot-column-vr {
+        justify-content: center;
+        display: flex;
+        transform: scale(0.90);
+    }
+
+    .plot-text p {
+        font-size: 15px;
+    }
+
+    .plot-text h3 {
+        font-size: 18px;
+    }   
+
+    .forest_navbar ul li a {
+        font-size: 16px;
+    }
+
+    .forest-plot-wrapper {
+        max-width: 100% !important;
+        gap: 10px; /* tighter horizontal gap */
+    }
+
+    .treatment-label {
+        display: block;
+        text-align: right;
+        font-size: 13px;              /* your original mobile size */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: auto;                   /* ensure no width:100% forces wrap */
+    }
+
+    .plot-column {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;      /* critical for flex shrink/expand */
+        width: auto !important;
+    }
+
+    .plot-content {
+        max-width: none !important;
+        width: 100% !important;
+    }
+
+    .x-axis {
+        width: 100%;
+        font-size: 13px; /* slightly smaller axis font */
+    }
+
+    .tick-label {
+        font-size: 13px;
+    }
+
+    .bar-stats {
+        font-size: 11px;
+        line-height: 1.1;
+    }
+    
+
+    .label-column {
+        gap: 16.5px;
+        min-width: 0 !important;                 /* allow shrink inside flex */
+        flex: 0 0 auto !important;   /* fixed narrow lane */
+        max-width: 140px !important;
+        width: auto !important;       /* override any width:100% */
+        padding-right: 6px;           /* less dead space to the plot */
+        align-items: flex-end;        /* keep right aligned */
+    }
+
+    .names {
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #3c3744; /* Darker color for names */
+    }
+    
+    .names:hover {
+        font-size: 15.5px;
+     }
+    
+    .affiliation {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        font-size: clamp(18px, 5vw, 25px);
+        padding: 15px;  
+    }
+
+    nav ul {
+        flex-direction: column;       /* stack the list vertically */
+        align-items: center;          /* center the items */
+    }
+
+    nav ul li {
+        display: block;               /* make each li take full width */
+        margin: 8px 0;                /* space between items */
+    }
+
+    nav ul li:not(:last-child)::after {
+        content: none;                /* remove the slash between items */
+    }
+
+    nav ul li a {
+        font-size: 22px;              /* make links larger on mobile */
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .findings_navbar ul li a {
+        font-size: 22px;
+    }
+
+    .forest-plot-wrapper {
+        flex-direction: row;               /* keep row, no stacking */
+        align-items: flex-start;
+        max-width: 100% !important;
+        gap: 8px;                          /* a bit tighter than 768px */
+    }
+
+    /* Label lane shrinks to its (short) content */
+    .label-column {
+        flex: 0 0 auto !important;         /* don't grow */
+        width: fit-content !important;     /* size to content */
+        max-width: 110px !important;       /* tighter than 768px */
+        min-width: 0 !important;
+        padding-right: 6px;
+        gap: 18.1px;                         /* sync with plot rows */
+        align-items: flex-end;             /* keep right-aligned */
+    }
+
+    /* Short codes on one line; no forced width */
+    .treatment-label {
+        width: auto;
+        display: block;
+        text-align: right;
+        font-size: 12px;                   /* smaller than at 768px */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Plot takes all remaining space */
+    .plot-column {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;           /* critical for flex layouts */
+        width: auto !important;
+    }
+
+    .plot-content {
+        max-width: none !important;
+        width: 100% !important;
+    }
+
+    .effect-bar {
+        width: 100% !important;           /* kill any residual caps */
+    }
+
+    /* Axis + tick sizing */
+    .x-axis {
+        width: 100% !important;
+        font-size: 12px;
+    }
+
+    .tick-label {
+        font-size: 12px;
+    }
+
+    /* Smaller stats on very small screens */
+    .bar-stats {
+        font-size: 10.5px;
+        line-height: 1.1;
+    }
+
+    .first-plot {
+        width: 100%; 
+        transform-origin: top center; 
+        align-items: center;
+        padding-bottom: 20px;
+    }   
+
+    .second-plot {
+        max-width: 100%;
+        transform-origin: top center;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .plot-text, .plot-column-vr {
+        max-width: 100%;           /* full width on small screens */
+        width: 100%;
+        padding: 5px 0;           /* top/bottom padding, no side padding */
+        box-sizing: border-box;
+    }
+
+    .plot-text p {
+        padding-bottom: 0px; /* remove bottom padding */
+    }
+
+    .plot-column-vr {
+        width: 70%;
+    }
+
+    .public_statement-text p {
+        font-size: 15px;
+    }
+}

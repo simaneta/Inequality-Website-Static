@@ -1,0 +1,161 @@
+<!-- templates/treatment_base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treatment 4</title>
+    <link rel="stylesheet" href="../static/website_styles.css">
+</head>
+
+<body class="treatment-body">
+    <div class="treatment-content">
+        <h2>Framing Inequality Around a Wealthy Group (T4)</h2>
+        <p>Now, we are going to ask you to reflect upon a group of the wealthiest people in society.</p>
+<p>Please read the following information very carefully:</p>
+<p><b>In 1990</b>, the <b>25 richest people in the United States</b> had an average net wealth of <b>2.5 billion dollars per person</b>.</p>
+<p><b>In 2024</b>, that wealth has grown to an average net wealth of <b>84.4 billion dollars per person</b>. In comparison, the latest estimate for the <b>annual median household income in the US is $74,580</b>.</p>
+<p>Below, the average wealth of this group of people is represented graphically and compared to the annual median income in the US.</p>
+<p>Please take a moment to understand how wealthy this group of people, on average, has become by scrolling to the bottom of this page.</p>
+
+<!-- BEGIN: Visual Treatment Block -->
+<div class="visual-treatment-super-wrapper">
+    <div class="visual-treatment-wrapper"> </div>
+        
+    <style>
+        .flex {
+        flex-direction: column;
+        display: flex;
+        width: 100%;
+        }
+    
+        .wealth-column {
+        width: 100%;
+        position: relative;
+        }
+    
+        @media (min-width: 576px) {
+        .wealth-column {
+            width: 75%;
+        }
+        }
+    
+        .average-household {
+        position: absolute;
+        width: 1.5%;
+        background-color: #c26203;
+        z-index: -2;
+        margin-top: 2%;
+        margin-left: 2%;
+        }
+    
+        .median {
+        color: #c26203;
+        }
+    
+        .richest-1990 {
+        width: 40%;
+        background-color: #59D733;
+        z-index: -5;
+        position: absolute;
+        margin-top: 1%;
+        margin-left: 1%;
+        }
+    
+        .richest-1990-title {
+        color: #59D733;
+        font-family: 'Nunito Sans', sans-serif;
+        }
+    
+        .richest {
+        width: 100%;
+        background-color: #3b82f6;
+        z-index: -6;
+        position: absolute;
+        }
+    
+        .richest-title {
+        color: #3b82f6;
+        font-family: 'Nunito Sans', sans-serif;
+        }
+    
+        .wealth-row-titles {
+        font-family: 'Nunito Sans', sans-serif;
+        }
+    
+        .richest-1990-end,
+        .richest-2024-end {
+        position: absolute;
+        text-align: center;
+        font-family: 'Nunito Sans', sans-serif;
+        bottom: 0;
+        color: #000000;
+        }
+    </style>
+    
+
+    <div class="flex">
+        <div class="wealth-row-titles">
+        <div class="median">
+            <h3>$74,580 <span style="font-size: smaller">(median US household income)</span></h3>
+        </div>
+        <div class="richest-1990-title">
+            <h3>$2,500,000,000 <span style="font-size: smaller">(average net wealth of one of the top 25 richest US individuals in 1990)</span></h3>
+        </div>
+        <div class="richest-title">
+            <h3>$84,400,000,000 <span style="font-size: smaller">(average net wealth of one of the top 25 richest US individuals in 2024)</span></h3>
+        </div>
+        </div>
+    </div>
+    
+    <div id="wealthColumn" class="wealth-column">
+        <div id="averageHousehold" class="average-household"></div>
+        <div id="richest1990" class="richest-1990">
+        <div class="richest-1990-end">
+            <h3>This space represented $2,500,000,000.</h3>
+        </div>
+        </div>
+        <div id="richest" class="richest">
+        <div class="richest-2024-end">
+            <h3>This is what $84,400,000,000 looks like. Please take a moment to reflect on how wealthy the 25 wealthiest individuals in the US are, on average, compared to an average American.</h3>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        const blocks = [
+        {
+            area: 74,
+            element: document.getElementById("averageHousehold"),
+        },
+        {
+            area: 2500000,
+            element: document.getElementById("richest1990"),
+        },
+        {
+            area: 84400000,
+            element: document.getElementById("richest"),
+        },
+        {
+            area: 84400000,
+            element: document.getElementById("wealthColumn"),
+        },
+        ];
+    
+        window.addEventListener("resize", calcHeight);
+        calcHeight();
+    
+        function calcHeight() {
+        for (const block of blocks) {
+            const width = block.element.clientWidth;
+            const desiredHeight = block.area / width;
+            block.element.style.height = desiredHeight + "px";
+        }
+        }
+    </script>
+    </div>
+</div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
