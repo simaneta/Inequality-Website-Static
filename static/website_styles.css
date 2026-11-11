@@ -19,6 +19,10 @@ html, body {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Nunito Sans', sans-serif;
     background-color: #D2D3D5;
@@ -30,10 +34,10 @@ header {
     font-optical-sizing: auto;
     background-color: #090c9b;
     color: #fbfff1;
-    padding: 25px;
+    padding: 10px;
     text-align: center;
     margin: 0;
-    font-size: 30px;
+    font-size: 22px;
     letter-spacing: 1px;
 }
 
@@ -67,7 +71,7 @@ p {
     margin: auto;
     max-width: 700px;
     text-align: justify;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 /* navigation */
@@ -396,7 +400,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .paper-text p {
-    font-size: 18px;
+    font-size: 19px;
     color: #3c3744;
     padding-bottom: 16px;
     max-width: 750px;
@@ -496,7 +500,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .media-card p {
-    font-size: 18px;
+    font-size: 19px;
     padding: 8px 10px;
 }
 
@@ -655,7 +659,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .public_statement-text p {
-    font-size: 18px;
+    font-size: 19px;
     color: #3c3744;
     padding-bottom: 16px;
     max-width: 750px;
@@ -669,7 +673,7 @@ input[type="range"]::-webkit-slider-thumb {
     max-width: 1070px;
     margin: 0 auto;          /* center */
     border-collapse: collapse;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.6;        /* slightly tighter lines */
 }
 
@@ -727,7 +731,7 @@ body.treatment-body {
     margin: auto;
     max-width: 700px;
     text-align: justify;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 .visual-treatment-super-wrapper {
@@ -843,7 +847,7 @@ body.treatment-body {
 .forest_navbar ul li a {
     text-decoration: none; /* Remove default underline */
     color: #090c9b; 
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 400;
     
 }
@@ -1068,6 +1072,75 @@ footer {
     text-decoration: none;
     font-size: 16px;
     transform: scale(1.06);
+}
+
+/* Privacy policy page */
+
+.privacy-policy {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    color: #3c3744;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+/* Paragraphs */
+.privacy-policy p {
+    max-width: none;
+    margin: 0 0 16px;
+    padding: 0;
+    text-align: justify;
+    font-size: inherit;
+}
+
+/* Lists: same typography as paragraphs */
+.privacy-policy ul {
+    margin: 0 0 16px;
+    padding-left: 35px;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+}
+
+.privacy-policy li {
+    margin-bottom: 6px;
+    font: inherit;
+}
+
+/* Indented contact details */
+.privacy-policy .contact-details {
+    padding-left: 35px;
+    text-align: left;
+}
+
+/* Single-line information */
+.privacy-policy .info-line,
+.privacy-policy .privacy-policy-updated {
+    text-align: left;
+}
+
+/* Hyperlinks */
+.privacy-policy a,
+.privacy-policy a:visited {
+    color: #090c9b;
+    text-decoration: none;
+    display: inline-block;
+    transform-origin: left center;
+    transition: transform 0.15s ease;
+}
+
+.privacy-policy a:hover {
+    transform: scale(1.03);
+}
+
+/* Accessible keyboard focus */
+.privacy-policy a:focus-visible {
+    outline: 2px solid #090c9b;
+    outline-offset: 3px;
 }
 
 
@@ -1397,5 +1470,23 @@ footer {
 
     .public_statement-text p {
         font-size: 15px;
+    }
+
+    .privacy-policy {
+        font-size: 15px;
+        padding: 20px 25px;
+    }
+
+    .privacy-policy p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .privacy-policy ul {
+        padding-left: 25px;
+    }
+
+    .privacy-policy .contact-details {
+        padding-left: 25px;
     }
 }
